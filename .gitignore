@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+.pytest_cache/
+dist/
+build/
+out/
+findings.json
+results.json
+metrics.json
+timeline.md
+block.txt

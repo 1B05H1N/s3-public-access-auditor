@@ -1,0 +1,30 @@
+{
+  "bucket": "example-private-bucket",
+  "policy": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "AllowAppRole",
+        "Effect": "Allow",
+        "Principal": {"AWS": "arn:aws:iam::123456789012:role/app"},
+        "Action": ["s3:GetObject"],
+        "Resource": "arn:aws:s3:::example-private-bucket/*"
+      },
+      {
+        "Sid": "DenyInsecureTransport",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::example-private-bucket/*",
+        "Condition": {"Bool": {"aws:SecureTransport": "false"}}
+      }
+    ]
+  },
+  "acl": {"grants": []},
+  "public_access_block": {
+    "BlockPublicAcls": true,
+    "IgnorePublicAcls": true,
+    "BlockPublicPolicy": true,
+    "RestrictPublicBuckets": true
+  }
+}
