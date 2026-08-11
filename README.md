@@ -1,5 +1,7 @@
 # s3-public-access-auditor
 
+[![CI](https://github.com/1B05H1N/s3-public-access-auditor/actions/workflows/ci.yml/badge.svg)](https://github.com/1B05H1N/s3-public-access-auditor/actions/workflows/ci.yml)
+
 Audit an S3 bucket configuration for public exposure - offline, from JSON you
 export. Analyzes the bucket policy, ACL grants, and Public Access Block settings
 for world-readable/writable access, unconditioned public principals, and missing
